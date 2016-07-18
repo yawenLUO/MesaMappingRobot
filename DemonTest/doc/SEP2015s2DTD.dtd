@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mesamap [
+  <!ELEMENT mesamap (attribute*, boundary, robot-status, zone*, density-spot*)>
+  <!ATTLIST mesamap units (metres|km|cm|mm) "metres">
+
+  <!ELEMENT boundary (area)>
+  
+  <!ELEMENT robot-status (attribute*, point)>
+
+  <!ELEMENT density-spot (point, attribute)>
+
+  <!ELEMENT base-station (circle)>
+
+  <!ELEMENT zone (attribute*, (circle|area) )>
+  <!ATTLIST zone 
+  	state (nogo|unexplored|explored) "unexplored">
+
+  <!ELEMENT area (point+)>
+
+  <!ELEMENT circle EMPTY>
+  <!ATTLIST circle
+      x CDATA #REQUIRED
+      y CDATA #REQUIRED
+      radius CDATA #REQUIRED>
+
+  <!ELEMENT point EMPTY>
+  <!ATTLIST point 
+      x CDATA #REQUIRED
+      y CDATA #REQUIRED>
+  
+  <!-- General Attributes definition -->
+  <!ELEMENT attribute (key,value)>
+  <!ELEMENT key (#PCDATA)>
+  <!ELEMENT value (#PCDATA)>
+]>

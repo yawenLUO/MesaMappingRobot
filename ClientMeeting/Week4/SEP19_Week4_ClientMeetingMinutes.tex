@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+\title{Minutes of Meeting}
+\author{Group PG 19}
+\date{18 August, 2015}
+
+\begin{document}
+\maketitle
+\section*{Attendance}
+\begin{tabular}{l l}
+\textbf{Chair:} &a1657343 Luo Yawen\\
+\textbf{Secretary:}&a1446944 Shaun Zander\\
+&a1653772 Zhang Yun\\
+&a1662541 Yang Jiajun\\
+&a1653772 Zhang Yun\\
+&a1671836 Wei Jingwen\\
+&a1690773 Wang Yuzhu\\
+\textbf{Absent:}&a1651541 Lee So Min (no apologies)
+\end{tabular}
+
+\section{Objectives}
+A number of questions were asked to the client about the design of the project.
+
+\subsection{How do you define a no go zone? Colour? Shape?}
+The no go zones will either be pre defined or dynamically allocated. There will be no visual representation of the no go zone on the Terrain. There will also be no uniform shape to the no go zones. They may be flat or 3D. They are the things that the robot can not go near. No go zones may also need to be defined by us.
+
+\subsection{Is the communications tower and operation base considered as a single building?}
+Yes. The communications tower is the operation base.
+
+\subsection{In what scenario does the robot need to work automatically?}
+The mapping should be done automatically. The only times when the robot is controlled manually would be getting the robot to the operation baser at he start and if the robot is i a no go zone.
+
+\subsection{How many different types of areas are there and how does the robot detect the different areas?}
+How the robot will detect the areas is up to us to design. The different types of areas are already laid out in the specification document provided.
+
+\subsection{After finishing the map, does the robot need to tell itself the no-go zones or it’s just controlled by us?}
+As The robot does the mapping automatically, it must not be able to access any of the pre defined no go zones. It also must not be able to access any of the dynamically allocated no go zones.
+
+\subsection{If we lost communication between the robot and the operator, should the robot stop or go back?}
+
+If there is a break in communication the robot should stop immediately. It would then need to either be recovered by the user or wait for communication.
+
+\subsection{When will a suitable DTD be available?}
+It is still no set date when a DTD will be available. However it will be later on in the project.
+
+\subsection{Does the client provide a paper/card for representing of the terrain, or will we construct it?}
+The terrain will be provided. It will be the size of an A1 sheet of paper.
+
+\subsection{What does the reference mean in the template of SPMP? Is it the normal reference?}
+
+Yes. It is the normal reference.
+
+\subsection{Will the base tower ever move? Will there only one?}
+The base tower will be in a fixed location and will not move. There will also only be one base tower.
+
+\subsection{Are cliffs only on the external edge of the mesa?}
+Yes. Cliffs are located on the edge of the Mesa. However the boundary of the terrain is marked before this point. The robot is not to cross this boundary.
+
+\subsection{What form of communication will be used? Wifi, Bluetooth or cable?}
+The choice of communication used is up to the team.
+
+\subsection{What is the effective distance range of the central control brick?}
+Range is currently unspecified at this point.
+
+\subsection{For every single change in the procedure of the SEP, de we need to demonstrate it in documents or we just include the latest version?}
+All documents will need to reflect the SEP, so if a change in the documents is necessary then it will need to be done.
+
+\section{Layout of the Terrain}
+A discussion was had between the project team and the client clarifying the layout of the terrain.
+
+\section{Next Meeting}
+The next client meeting will be held at \textbf{3:30pm} in the \textbf{25th of August, 2015.} It will be held in the \textbf{SEP Lab}.
+
+\end{document}

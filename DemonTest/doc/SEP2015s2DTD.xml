@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- document type declaration for the SEP MesaMaps mapping -->
+<!-- Sem2, 2015: -->
+<mesamap units="metres">
+  <attribute>
+    <key>Survey Date</key>
+    <value>01/01/2015</value>
+  </attribute>
+
+  <attribute>
+    <key>Robot Model</key>
+    <value>Lego Mindstorm EV3</value>
+  </attribute>
+
+  <boundary>
+    <area>
+      <point x="0" y="0"/>
+      <point x="20" y="0"/>
+      <point x="20" y="15"/>
+      <point x="0" y="15"/>
+    </area>
+  </boundary>
+  
+  <robot-status>
+    <attribute>
+      <key>heading</key>
+      <value>0</value>
+    </attribute>
+      
+    <point x="16" y="13"/>
+  </robot-status>
+
+  <base-station>
+    <circle x="13" y="5" radius="2" />
+  </base-station>
+
+
+  <zone state="explored">
+    <area>                                            
+      <point x="5" y="5"/>
+      <point x="13" y="1"/>
+      <point x="16" y="4"/>
+      <point x="16" y="13"/>
+      <point x="10" y="13"/>
+      <point x="10" y="10"/>
+      <point x="5" y="10"/>
+    </area>
+  </zone>
+  
+  <zone state="nogo">
+    <circle x="3" y="2" radius="3" />
+  </zone>
+
+  <zone state="nogo">
+    <area>
+      <point x="19" y="1"/>
+      <point x="19" y="3"/>
+      <point x="17" y="3"/>
+      <point x="17" y="1"/>
+    </area>
+  </zone>
+
+  <density-spot>
+    <point x="7" y="10"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>0000FF</value>  <!-- Blue -->
+    </attribute>
+  </density-spot>
+
+  <density-spot>
+    <point x="0" y="2"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>FF0000</value>  <!-- Red -->
+    </attribute>
+  </density-spot>
+
+  <density-spot>
+    <point x="8" y="6"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>FF0000</value>  <!-- Red -->
+    </attribute>
+  </density-spot>
+
+  <density-spot>
+    <point x="12" y="11"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>00FF00</value>  <!-- Green -->
+    </attribute>
+  </density-spot>
+
+  <density-spot>
+    <point x="20" y="9"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>00FF00</value>  <!-- Green -->
+    </attribute>
+  </density-spot>
+  
+  <density-spot>
+    <point x="7" y="0"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>00FF00</value>  <!-- Green -->
+    </attribute>
+  </density-spot>
+
+  <density-spot>
+    <point x="13" y="8"/>
+    
+    <attribute>
+      <key>colour</key>
+      <value>FFFF00</value>  <!-- Yellow -->
+    </attribute>
+  </density-spot>
+</mesamap>
+

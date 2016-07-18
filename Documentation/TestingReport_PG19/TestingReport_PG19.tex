@@ -1,0 +1,541 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{anyfontsize}
+\usepackage{txfonts} 
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\geometry{left=3cm,right=2.5cm,top=3.5cm,bottom=4cm}
+
+%Graphics preamble
+\usepackage{graphicx} %Allow you to import images
+\usepackage{float} %Allow for control of float position
+
+%Header and Footer Stuff
+\pagestyle{myheadings}\markboth{page \thepage}{\emph Testing Report for Mesa Mapping Robot}
+
+%Table
+\setlength{\arrayrulewidth}{0.5mm}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+
+	\vspace{0.5 cm}
+	\fontsize{35}{35}\selectfont\bf {Testing Report}\\
+	\vspace{0.5 cm}
+	\huge{\bfseries for}\\
+	\vspace{0.5 cm}
+	\fontsize{35}{40}\selectfont\bf {Mesa Mapping Robot}\\
+	
+	\vspace{2cm}
+	\Large\textbf{Version 1.0 approved}\\
+	
+	\vspace{1.5cm}
+	\Large\textbf {Prepared by SEP Group 19 - Spark\\
+								a1657343 Luo Yawen\\
+								a1662541 Yang Jiajun\\
+								a1653772 Yun Zhang\\
+								a1671836 Wei Jingwen\\
+								a1690773 Wang Yuzhu}\\
+		
+	\vspace{2cm}
+	\Large\textbf{School of Computer Science,\\
+								The University of Adelaide}\\
+	\vspace{2cm}
+	
+	\Large\textbf{Nov 01, 2015}\\
+
+\end{center}
+
+\end{titlepage}
+
+%This is table of contents stuff
+\pagenumbering{roman}
+\tableofcontents
+
+%This is the version history stuff
+\vspace{1cm}
+\section*{Revision History}
+\addcontentsline{toc}{section}{\numberline{}Revision History}
+%\begin{table}
+\small
+\begin{tabular} 
+	 {|m{3cm}|m{2cm}|m{8cm}|m{2cm}|}
+	\hline
+	\textbf{Name} &  \textbf{Date} & \textbf{Reason For Changes} & \textbf{Version} \\ [0.5ex]
+	\hline
+	Wei Jingwen & 20/Oct/15 & Add section 1 & 0.1 \\ [0.5ex]
+	\hline
+	Wei Jingwen & 21/Oct/15 & Add section 2 & 0.2 \\ [0.5ex]
+	\hline
+	Wei Jingwen & 22/Oct/15 & Add section 3.1 & 0.3 \\ [0.5ex]
+	\hline
+	Wei Jingwen & 24/Oct/15 & Add section 3.2 & 0.6 \\ [0.5ex]
+	\hline
+	Wei Jingwen & 26/Oct/15 & Add section 3.3 & 0.8 \\ [0.5ex]
+	\hline
+	Wei Jingwen & 27/Oct/15 & Review all sections & 0.9 \\ [0.5ex]
+	\hline
+	Luo Yawen & 01/Nov/15 & Release & 1.0 \\ [0.5ex]
+	\hline
+
+	
+\end{tabular}
+%\end{table}
+\cleardoublepage
+
+\newpage
+
+
+%This is main body stuff
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%section1
+\section{Introduction}
+\subsection{Document overview}
+This document is the test report of the mesa mapping robot testing phase of both software development and robot test in project. It contains the results of tests, which were executed during the testing phase of the robot.
+
+\subsection{Abbreviations and Glossary}
+\subsubsection{Abbreviations}
+\begin{itemize}
+\item {CC - }Control Centre\\
+\item {CS - }Colour Sensor\\
+\item {GUI - }Graphical User Interface\\
+\item {IW - }Ingkarni Wardli\\
+\item {NGZ - }No Go Zone\\
+\item {PG19 - }Postgraduate Group 19\\
+\item {SRS - }Software Requirement Specification\\
+\item {USS - }UltraSonic Sensor\\
+\end{itemize}
+
+\subsection{References}
+\subsubsection{Project References}
+\begin{tabular} 
+	 {|p{1.2cm}|p{12cm}|}
+\hline
+{\#} & {Document Title}\\
+\hline
+{1} & {Software Requirements Specification for Mesa Mapping Robot PG19 V2.0}\\
+\hline
+\end{tabular}
+
+\subsection{Conventions}
+In this report, you will find a number of tests for a mapping robot named Spk\_EV3 that designed for the mapping mission.  The testing will cover the majority function that is programmed for the robot.
+\newpage
+
+%section2
+\section{Overview of Tests Results}
+\subsection{Tests log}
+The test will cover all the executable functions that were able to meet the requirements according to the SRS document. There is a test plan starting for the basic function to the algorithm which the software engineers design to perfect the robot performance and gain its abilities. \\
+\\
+The SparkMesaExplorer (version 4.1.1) was tested on the Spk\_EV3 (A mapping robot designed by PG19 and built by LOGO Mindstorm EV3 set) platform by a MacBook Pro which using OS X 10.11.1 located in IW 462, from the 24/10/2015 to the 26/10/2015. The tests of the test phase (ref. software test plan) where executed.\\
+\\
+Testers where: Jingwen Wei (a1671836)
+
+\subsection{Rationale for decision}
+After executing a test, the decision is defined according to the following rules: \\
+
+\begin{itemize}
+\item {\bfseries OK:} The test sheet is set to "OK" state when all steps are in "OK" state. The real result is compliant to the expected result.\\
+\item {\bfseries NOK:} The test sheet is set to "NOK" state when all steps of the test are set to "NOK" state or when the result of a step differs from the expected result.\\
+\item {\bfseries Partial OK:} The test sheet is set to "Partial OK" state when at least one step of the test is set to "NOK" state or when the result of a step is partially compliant to the expected result. \\
+\item {\bfseries NOT RUN:} Default state of a test sheet not yet executed.\\
+\item {\bfseries NOT COMPLETED:} The test sheet is set to "Not Completed" state when at least one step of the test is set "Not Run" state.\\
+\end{itemize}
+Tests results are listed in section 3.
+
+\subsection{Overall assessment of tests}
+The qualitative overall assessment of tests.\\
+\begin{itemize}
+\item {All the method that are written in the test.java shall have test of its structure and outcome of the robot actions.}\\
+\item {All the testing will be executing for at least 5 times for ensuring the out come is in an acceptable stability.}\\
+\item {All tests with interfaces passed, GUI is not optimised for screens of the test platform.}\\
+\item {All tests program had a theoretical explanation and have no logical mistake.}\\
+\end{itemize}
+The quantitative results.\\
+\\
+Statistics about tests:\\
+\begin{itemize}
+\item {66.7\% of tests OK}\\
+\item {28.5\% of tests NOK}\\
+\item {4.8\% of tests POK}\\
+\item {0\% of tests NR}\\
+\item {0\% of tests NC}\\
+\end{itemize}
+
+\subsection{Impact of test environment}
+The impact of the test environment is sometimes unavoidable, such as the the signal from the sensor is unstable, the colour is different when dealing the same situation with different when the environmental light. The key issue of the influenced robot movement is the friction of the surface can make the coordinate system broken due to the fact that the there is no such a location feedback from any sensor. The EV3 brick in the robot should also installed LeJOS in order to executed Java program.\\
+\\
+The Eclipse Mars Release(V4.5.0) used in this test, the laptop which runs this program should have Bluetooth function to connect with robot, the platform in use in the test is a MacBook Pro runs OS X(V10.11.1). The LeJOS which was installed initially is LeJOS\_EV3\_0.9.0-beta, as the Plugin demand the version of Java, the actually JRE using is eclipse in Java SE 7 [1.7.0\_79].\\
+
+%section3
+\section{User Requirements}
+For each executed test, this document contains:\\
+\begin{itemize}
+\item {Test identification;}\\
+\item {Test title;}\\
+\item {Test decision;}\\
+\item {A comment containing additional information or problems encountered during execution and differences with the test procedure.}\\
+\end{itemize}
+\newpage
+
+\subsection{Basic Using Test}
+%test001
+\begin{itemize}
+\item {Test 001}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 001} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Attempt to connect robot and platform via Bluetooth} & {The control and command will deliver to robot through \newline Bluetooth} & {OK}\\
+\hline
+{Initial conditions} & {The robot turned on and the Bluetooth of laptop } & {} & {OK}\\
+\hline
+{Tests inputs} & {None} & {} & {}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {None} & {} & {}\\
+\hline
+{Assumptions and constraints} & {EV3 brick is able to be detected and the connection} & {Both side ready} & {OK}\\
+\hline
+{Expected results and criteria} & {Robot can be connected through EV3 CC} & {} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Start Bluetooth preference} & {Bluetooth is started} & {OK}\\
+\hline
+{2} & {Pair the Spk\_EV3 device} & {Spk\_EV3 paired and connected} & {OK}\\
+\hline
+{3} & {Connect Spk\_EV3 with EV3 CC} & {Connection established} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test002
+\begin{itemize}
+\item {Test 002}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 002} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Testing the forward action - straightF} & {The forward under controlled} & {OK}\\
+\hline
+{Initial conditions} & {The robot is free and static} & {} & {OK}\\
+\hline
+{Tests inputs} & {currentAngle - float, \newline legalColor - float, \newline targetX - double, \newline targetY - double
+} & {Describing how this forward \newline action works} & {OK}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The actions and if robot can \newline perform as the input} & {Only the movement action and the stop condition} & {OK}\\
+\hline
+{Assumptions and constraints} & {The towards of the robot is \newline +/- 10 degree to currentAngle} & {} & {OK}\\
+\hline
+{Expected results and criteria} & {The forward along the input \newline direction, stop when run out \newline legal colour or coordinate} & {The X and Y cannot both \newline applied} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline straightF(0, Color.WHITE, 20, Double.NaN)} & {Robot go straight ahead until the colour under CS is not white or reach 20 cm} & {OK}\\
+\hline
+{2} & {Execute \newline straightF(90, Color.WHITE, \newline Double.NaN, 20)} & {Same as Step 1, only change the direction manually} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test003
+\begin{itemize}
+\item {Test 003}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 003} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Testing the forward \newline action - straightB} & {The backward under controlled} & {OK}\\
+\hline
+{Initial conditions} & {The robot is free and static} & {} & {OK}\\
+\hline
+{Tests inputs} & {currentAngle - float, \newline targetColor - float, \newline targetX - double, \newline targetY - double} & {Describing how this backward action works} & {OK}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The actions and if robot can \newline perform as the input} & {Only the movement action and the stop condition} & {OK}\\
+\hline
+{Assumptions and constraints} & {The towards of the robot is \newline +/- 10 degree to currentAngle} & {} & {OK}\\
+\hline
+{Expected results and criteria} & {The backward along the input direction, stop when run out \newline legal colour or coordinate} & {The X and Y cannot both \newline applied} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline straightB(0, Color.RED, \newline 20, Double.NaN)} & {Robot go straight back until the colour under CS is not red or reach 20 cm} & {OK}\\
+\hline
+{2} & {Execute \newline straightB(90, Color.RED, \newline Double.NaN, 20)} & {Same as Step 1, only change the direction manually} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test004
+\begin{itemize}
+\item {Test 004}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 004} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Testing the turning \newline action - r\_turn \& l\_turn} & {The changing direction method} & {OK}\\
+\hline
+{Initial conditions} & {The changing direction method} & {} & {OK}\\
+\hline
+{Tests inputs} & {targetAngle - float \newline (Absolute angle)} & {Target Angle is based on the \newline initial point} & {OK}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The actions and if the robot can turn accurately as the command input} & {} & {OK}\\
+\hline
+{Assumptions and constraints} & {The target angle is legal \newline e.g. the right turn is large than current angle} & {} & {OK}\\
+\hline
+{Expected results and criteria} & {The backward along the input direction, stop when run out \newline legal colour or coordinate} & {The X and Y cannot both \newline applied} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline r\_trun(90)} & {Robot turn right 90 +/- 1} & {OK}\\
+\hline
+{2} & {Execute \newline r\_trun(90)} & {Robot turn left 90 +/- 1} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+\subsection{Intermediate Test}
+%test005
+\begin{itemize}
+\item {Test 005}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 005} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability to go along black boundary - alongLine \newline (float direction)} & {If the result turns out it is not along, it can only indicate \newline operator to adjust angle} & {NOK}\\
+\hline
+{Initial conditions} & {The robot placed besides the black boundary} & {} & {OK}\\
+\hline
+{Tests inputs} & {Direction - float} & {Target Angle of the line} & {OK}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The robot can use its arm to \newline follow the line and visually \newline reflecting the condition} & {The robot can stop at the end of the black line} & {OK}\\
+\hline
+{Assumptions and constraints} & {The target angle is legal and the robot is accurately placed \newline besides the line} & {} & {OK}\\
+\hline
+{Expected results and criteria} & {The robot can turn its arm back to front when the direction has been confirmed stop in the end} & {} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline alongLine(0)} & {Robot turn its arm and found black line stop when lost line} & {NOK}\\
+\hline
+{2} & {Execute \newline alongLine(0)} & {Robot turn its arm and found black line turn arm back when the direction confirmed stop at the cross boundary} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test006
+\begin{itemize}
+\item {Test 006}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 006} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability of recognise the obstacle - obstacle()} & {The robot is able to identify the obstacle when right arm \newline encounter one} & {OK}\\
+\hline
+{Initial conditions} & {The robot is under forward \newline condition} & {} & {OK}\\
+\hline
+{Tests inputs} & {None} & {} & {}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The robot can use its right arm to identify obstacle and avoid it} & {As the size of the robot, the robot will backward a little} & {OK}\\
+\hline
+{Assumptions and constraints} & {The obstacle is in front of robot right arm and flat} & {It may miss the obstacle when the USS not function well} & {POK}\\
+\hline
+{Expected results and criteria} & {The robot is able to identify the obstacle and back turn left and go straight until scan over the line then turn back to original direction} & {} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline scan(0); \newline then put an obstacle in the path} & {Robot crash on the obstacle due to the surface of the obstacle can not detected by robot} & {NOK}\\
+\hline
+{2} & {Execute \newline scan(0); \newline then put an obstacle in the path} & {Robot meet obstacle, back a \newline little with light turn red, then turn left scan a path then turn back to right with red light off} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test007
+\begin{itemize}
+\item {Test 007}\\
+\end{itemize}
+
+\begin{tabular} 
+	  {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 007} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability of recognise the NGZ - ngzDectected()} & {The robot is able to identify the red line as NGZ} & {OK}\\
+\hline
+{Initial conditions} & {The robot is under scan \newline condition} & {} & {OK}\\
+\hline
+{Tests inputs} & {None} & {} & {}\\
+\hline
+{Data collection actions} & {None} & {} & {}\\
+\hline
+{Tests outputs} & {The robot can use its right arm to identify NGZ and avoid it} & {The robot ought to backward a little but it does not functioned} & {POK}\\
+\hline
+{Assumptions and constraints} & {The obstacle is in front of robot right arm and flat} & {It may miss the NGZ} & {POK}\\
+\hline
+{Expected results and criteria} & {The robot is able to identify the NGZ and back turn left and go straight until scan over the line then turn back to original \newline direction} & {Indicate light orange} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline scan(0); \newline then make a red line in front of robot} & {Robot across the NGZ due to the edge of NGZ is in the right side of robot} & {NOK}\\
+\hline
+{2} & {Execute \newline scan(0); \newline then make a red line in front of robot} & {Robot meet obstacle, back a \newline little with light turn orange, then turn left scan a path then turn back to right with orange light off} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test008
+\begin{itemize}
+\item {Test 008}\\
+\end{itemize}
+
+\begin{tabular} 
+	  {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 008} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability of recognise the deposit - scan()} & {The robot is able to identify the deposit only if CS through the deposit} & {POK}\\
+\hline
+{Initial conditions} & {The robot is under scan \newline condition} & {} & {OK}\\
+\hline
+{Tests inputs} & {Colourful deposit} & {} & {OK}\\
+\hline
+{Data collection actions} & {The coordinate and the colour of the deposit} & {} & {OK}\\
+\hline
+{Tests outputs} & {The robot can stop and reflect in green light, storage the data of the deposit} & {} & {OK}\\
+\hline
+{Assumptions and constraints} & {The deposit is placed in the path of robot's left arm} & {It may miss the deposit due to the CC is limited} & {POK}\\
+\hline
+{Expected results and criteria} & {The robot will record the \newline deposit store the data and stop to indicate its discovery} & {Indicate light green} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline scan(0); \newline then make a colourful deposit in path of robot's left arm} & {Robot across the deposit, stopped and light turned green then continue move and stop and light turned off after CC move out deposit} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+\subsection{Mission Test}
+%test009
+\begin{itemize}
+\item {Test 009}\\
+\end{itemize}
+
+\begin{tabular} 
+	  {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 009} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability of recognise the map - initialMap()} & {The robot is able to identify the boundary} & {OK}\\
+\hline
+{Initial conditions} & {The robot is under scan \newline condition} & {} & {OK}\\
+\hline
+{Tests inputs} & {None} & {} & {}\\
+\hline
+{Data collection actions} & {The size of the map} & {} & {OK}\\
+\hline
+{Tests outputs} & {The robot can circle round the map and appropriate detecting the boundary of the map} & {} & {OK}\\
+\hline
+{Assumptions and constraints} & {The robot is accurately placed besides the Boundary} & {} & {NOK}\\
+\hline
+{Expected results and criteria} & {The robot is able to go alone each line of the boundary and stop at the end} & {The robot  can not self adjust its direction when lose line} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline initialMap(); \newline then make adjustment when \newline every time it lose line} & {Robot can barely automatically accomplish the mission but with the manual assist} & {POK}\\
+\hline
+\end{tabular}
+\newpage
+
+%test010
+\begin{itemize}
+\item {Test 010}\\
+\end{itemize}
+
+\begin{tabular} 
+	 {|p{4cm}|p{4.5cm}|p{4.5cm}|p{1.5cm}|}
+\hline
+\textbf{Test ID} & \textbf{Test 010} & \textbf{Comment} & \textbf{Decision}\\
+\hline
+{Test description} & {Test the ability scanning the map - lineScan()} & {} & {OK}\\
+\hline
+{Initial conditions} & {At the origin point after \newline recognise the boundary} & {} & {OK}\\
+\hline
+{Tests inputs} & {None} & {} & {}\\
+\hline
+{Data collection actions} & {The size of the map, the NGZ points, the deposit information} & {} & {OK}\\
+\hline
+{Tests outputs} & {Information from the map} & {} & {OK}\\
+\hline
+{Assumptions and constraints} & {The coordinate of the robot is accurate and is able to run \newline under the program controlled and the obstacle, NGZ and \newline deposit is detectable} & {It can accomplish with the \newline assumption of every action is accomplished accurately} & {OK}\\
+\hline
+{Expected results and criteria} & {The NGZ points, the deposit \newline information} & {Indicate light orange} & {OK}\\
+\hline
+\textbf{Test procedure} & \textbf{} & \textbf{} & \textbf{}\\
+\hline
+\textbf{Step number} & \textbf{Operator actions} & \textbf{Expected result and \newline evaluation criteria} & \textbf{Result}\\
+\hline
+{1} & {Execute \newline lineScan(); \newline repeatly} & {Robot across the NGZ due to the edge of NGZ is in the right side of robot} & {NOK}\\
+\hline
+{2} & {Execute \newline lineScan(); \newline repeatly} & {Robot lost the direction after two turns and the coordinate} & {NOK}\\
+\hline
+{3} & {Execute \newline lineScan(); \newline repeatly} & {Robot crash on the obstacle which not appear on the right side of the robot} & {NOK}\\
+\hline
+{4} & {Execute \newline lineScan(); \newline repeatly} & {Robot can finally accomplish all the map} & {OK}\\
+\hline
+\end{tabular}
+\newpage
+
+\end{document}

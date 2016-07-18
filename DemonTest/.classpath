@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/commons-cli.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/dbusjava.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/ev3classes.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/ev3tools.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/jcommon.jar"/>
+	<classpathentry kind="lib" path="lib/ev3/jfreechart.jar"/>
+	<classpathentry kind="lib" path="lib/jsch-0.1.53.jar"/>
+	<classpathentry kind="lib" path="lib/ant-jsch.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
